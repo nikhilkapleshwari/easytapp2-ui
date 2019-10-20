@@ -1,0 +1,29 @@
+
+
+<span class="ui-float-label">
+    <input id="float-input" type="text" size="60" pInputText [(ngModel)]="searchQuery"> 
+    <label for="float-input">search anything</label>
+    <button pButton type="button" label="Search" class="ui-button-primary" (click)="search()"></button>
+</span>
+
+<p-dataView [value]="torrentSearchModel" *ngIf="flag">
+    <ng-template let-car pTemplate="listItem">
+        <div class="generic">
+            <div>
+                {{car.name}}
+            </div>
+            <a [href]="car.link">Visit link</a>
+            <div>
+                details: {{car.description}}
+            </div>
+            <div>
+                seeds: {{car.seeds}}
+            </div>
+            <div>
+                peers: {{car.peers}}
+            </div>
+            <a [href]="car.file">magnet link</a>
+
+        </div>
+    </ng-template>
+</p-dataView>
