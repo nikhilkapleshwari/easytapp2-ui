@@ -15,9 +15,9 @@ export class SearchComponent implements OnInit {
 
   constructor(private searchService:SearchService,private domSanitizer:DomSanitizer) { }
 
-  private searchQuery;
-  private torrentSearchModel:torrentSearchModel[]=new Array();
-  private flag;
+  searchQuery;
+  torrentSearchModel:torrentSearchModel[]=new Array();
+  flag;
 
   ngOnInit() {
   }
@@ -33,6 +33,7 @@ export class SearchComponent implements OnInit {
     //console.log(res);
     this.flag=true;
     console.log('setting flag :'+this.flag);
+    this.torrentSearchModel=new Array();
     for(var property in res){
       res[property].file=this.urlCheck(res[property].file);
       this.torrentSearchModel.push(res[property]);
