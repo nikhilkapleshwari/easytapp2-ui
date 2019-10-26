@@ -6,3 +6,11 @@
 a{
     color:rgb(31, 31, 185);
 }
+
+.searchBox{
+    text-align: center;
+    margin-top: 20px;
+}
+.label-align{
+    width:95%;
+}
