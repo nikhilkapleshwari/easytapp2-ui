@@ -1,0 +1,36 @@
+pipeline{
+    agent any
+    stages{
+        stage('Checkout'){
+            steps{
+                checkout([$class: 'GitSCM', 
+				branches: [[name: '*/master']], 
+				doGenerateSubmoduleConfigurations: false, 
+				extensions: [[$class: 'RelativeTargetDirectory',
+				relativeTargetDir:'/apps/easytapp2/easytapp2_server']], 
+				submoduleCfg: [], 
+				userRemoteConfigs: [[credentialsId: 'nikhilkapleshwari_github', url: 'https://github.com/nikhilkapleshwari/easytapp2-ui-server.git']]
+				])
+				
+				checkout([$class: 'GitSCM', 
+				branches: [[name: '*/master']], 
+				doGenerateSubmoduleConfigurations: false, 
+				extensions: [[$class: 'CleanCheckout']], 
+				submoduleCfg: [], 
+				userRemoteConfigs: [[credentialsId: 'nikhilkapleshwari_github', url: 'https://github.com/nikhilkapleshwari/easytapp2-ui.git']]
+				])
+            }
+        }
+        stage('Deploy Server'){
+            steps{
+                sh '/apps/easytapp2/scripts/deploy_easytapp2-server.sh'
+            }
+        }
+        stage('Deploy UI'){
+            steps{
+                sh '/apps/easytapp2/scripts/deploy_easytapp2-ui.sh'
+            }
+        }
+        
+    }
+}
