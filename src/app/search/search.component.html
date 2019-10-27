@@ -1,29 +1,40 @@
+<!-- <div class = "searchBox inputs input-group">
+       
+        <input id="float-input" type="text" size="60" pInputText [(ngModel)]="searchQuery">
+        <button type="button" pButton class="btn ui-button-primary btn-default search-button" (click)="search()">Search</button>
+    
+</div>-->
 
-<div class="searchBox">
-<span class="ui-float-label">
-    <input id="float-input" type="text" size="60" pInputText [(ngModel)]="searchQuery"> 
-    <!--label class="label-align" for="float-input">search anything</label>-->
-    <button pButton type="button" label="Search" class="ui-button-primary search-button" (click)="search()"></button>
-</span>
-  
+
+<div class="blue-square-container">
+    <input type="text" value="" placeholder="search here" class="txtbox" [(ngModel)]="searchQuery"/>
+    <input type="submit" value="OK"  class="btncls"  (click)="search()"/>
 </div>
 
+<!-- <div class="searchBox input-group">
+    <span class="ui-float-label">
+        <input id="float-input" type="text" size="60" pInputText [(ngModel)]="searchQuery">
+        
+        <button pButton type="button" label="Search" class="ui-button-primary search-button"
+            (click)="search()"></button>
+    </span>
+</div> -->
 
 <p-dataView [value]="torrentSearchModel" *ngIf="flag">
     <ng-template let-torrent pTemplate="listItem">
         <div class="generic">
-        <p-panel [toggleable]="true" [transitionOptions]="'250ms'" [collapsed]="true">
-            <p-header>
-                {{torrent.name}}
-            </p-header>
-            <div class="ui-panel-content">
-            details: {{torrent.description}}<br>
-            seeds: {{torrent.seeds}}<br>
-            peers: {{torrent.peers}}<br>
-            <a [href]="torrent.file">magnet link</a>
+            <p-panel [toggleable]="true" [transitionOptions]="'250ms'" [collapsed]="true">
+                <p-header>
+                    {{torrent.name}}
+                </p-header>
+                <div class="ui-panel-content">
+                    details: {{torrent.description}}<br>
+                    seeds: {{torrent.seeds}}<br>
+                    peers: {{torrent.peers}}<br>
+                    <a [href]="torrent.file">magnet link</a>
+                </div>
+            </p-panel>
         </div>
-        </p-panel>
-    </div>
     </ng-template>
 </p-dataView>
 
