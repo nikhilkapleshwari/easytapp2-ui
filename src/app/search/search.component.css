@@ -1,3 +1,4 @@
+
 .generic{
     background-color: rgb(134, 185, 137);
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.4);
@@ -10,7 +11,31 @@ a{
 .searchBox{
     text-align: center;
     margin-top: 20px;
+    display: inline;
 }
-.label-align{
-    width:95%;
+
+.same-line{
+    display: inline;
 }
+
+.search-button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #4CAF50;
+    /* width: 100%; */
+    border: 0;
+    border-radius: 3px;
+    padding: 3px;
+    color: #FFFFFF;
+    font-size: 15px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    box-sizing: content-box;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  }
+
+  input{
+      height: 40px;
+  }
