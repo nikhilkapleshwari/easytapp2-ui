@@ -14,11 +14,15 @@ import {CardModule} from 'primeng/card';
 import {OrderListModule} from 'primeng/orderlist';
 import {PanelModule} from 'primeng/panel';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavbarComponent } from './navbar/navbar.component';
+import {ContextMenuModule} from 'primeng/contextmenu';
+import {MenuItem} from 'primeng/api';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchComponent
+    SearchComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CardModule,
     OrderListModule,
     PanelModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ContextMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
