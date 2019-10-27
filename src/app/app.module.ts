@@ -12,6 +12,8 @@ import {DataViewModule} from 'primeng/dataview';
 import {VirtualScrollerModule} from 'primeng/virtualscroller';
 import {CardModule} from 'primeng/card';
 import {OrderListModule} from 'primeng/orderlist';
+import {PanelModule} from 'primeng/panel';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import {OrderListModule} from 'primeng/orderlist';
     DataViewModule,
     VirtualScrollerModule,
     CardModule,
-    OrderListModule
+    OrderListModule,
+    PanelModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

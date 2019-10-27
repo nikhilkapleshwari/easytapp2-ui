@@ -2,12 +2,45 @@
 <div class="searchBox">
 <span class="ui-float-label">
     <input id="float-input" type="text" size="60" pInputText [(ngModel)]="searchQuery"> 
-    <label class="label-align" for="float-input">search anything</label>
-    <button pButton type="button" label="Search" class="ui-button-primary" (click)="search()"></button>
+    <!--label class="label-align" for="float-input">search anything</label>-->
+    <button pButton type="button" label="Search" class="ui-button-primary" (click)="search()"></button>    
 </span>
+
 </div>
 
+
 <p-dataView [value]="torrentSearchModel" *ngIf="flag">
+    <ng-template let-torrent pTemplate="listItem">
+        <div class="generic">
+        <p-panel [toggleable]="true" [transitionOptions]="'500ms'" [collapsed]="true">
+            <p-header>
+                {{torrent.name}}
+            </p-header>
+            details: {{torrent.description}}<br>
+            seeds: {{torrent.seeds}}<br>
+            peers: {{torrent.peers}}<br>
+            <a [href]="torrent.file">magnet link</a>
+        </p-panel>
+    </div>
+    </ng-template>
+</p-dataView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- backup -->
+
+<!-- <p-dataView [value]="torrentSearchModel" *ngIf="flag">
     <ng-template let-torrent pTemplate="listItem">
         <div class="generic">
             <div>
@@ -27,4 +60,4 @@
 
         </div>
     </ng-template>
-</p-dataView>
+</p-dataView> -->
