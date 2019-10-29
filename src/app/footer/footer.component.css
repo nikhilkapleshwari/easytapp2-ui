@@ -1,0 +1,20 @@
+.custom-footer{
+    height: 70px;
+}
+
+p{
+    font-size: 12px;  
+}
+
+a{
+    color: #4CAF50;
+}
+
+.custom-p{
+    color: gray;
+}
+
+.custom-span{
+    color: #4CAF50;
+    margin-right: 5px;
+}

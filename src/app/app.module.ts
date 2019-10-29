@@ -16,13 +16,17 @@ import {PanelModule} from 'primeng/panel';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
 import {ContextMenuModule} from 'primeng/contextmenu';
+import {SharedModule } from 'primeng/shared';
 import {MenuItem} from 'primeng/api';
+import { FooterComponent } from './footer/footer.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,8 @@ import {MenuItem} from 'primeng/api';
     OrderListModule,
     PanelModule,
     BrowserAnimationsModule,
-    ContextMenuModule
+    ContextMenuModule,
+    SharedModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
